@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link href="css/style.css" rel="stylesheet">
+        <title>{{post.author.username}}</title>
+    </head>
+    <body>
+        <h1>Posts by:{{post.author.username}}</h1>
+        {% for post in posts %}
+        
+        <h2>Theme:{{post.title}}
+        Date: {{post.published_date}}</h2>
+
+        {%endfor%}
+        
+        <p>{{post.content}}</p>
+    </body>
+</html>

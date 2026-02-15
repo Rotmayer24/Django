@@ -18,6 +18,11 @@ class Post(models.Model):
     content = models.TextField(max_length=3000)
     published_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(AppUser, on_delete=models.CASCADE, null=True, blank=True)
+
+    def published_recently(self):
+        return self.published_date >= timezone.now() - datetime.timedelta(days=7)
+
+
     def __str__(self):
         return self.title
 
